@@ -287,7 +287,7 @@ necessarily a Python program), a string containing some python code to
 be evaluated or a tuple ``(f, args, kw)`` containing a function and its
 arguments to be evaluated as ``f(*args, **kw)``. For example,
 
-.. code-block:: python
+.. code-block:: python-console
 
     >>> from memory_profiler import memory_usage
     >>> mem_usage = memory_usage(-1, interval=.2, timeout=1)
@@ -309,7 +309,7 @@ If you'd like to get the memory consumption of a Python function, then
 you should specify the function and its arguments in the tuple ``(f,
 args, kw)``. For example:
 
-.. code-block:: python
+.. code-block:: python-console
 
     >>> # define a simple function
     >>> def f(a, n=100):
@@ -332,7 +332,7 @@ REPORTING
 The output can be redirected to a log file by passing IO stream as
 parameter to the decorator like @profile(stream=fp)
 
-.. code-block:: python
+.. code-block:: python-console
 
     >>> fp=open('memory_profiler.log','w+')
     >>> @profile(stream=fp)
@@ -352,7 +352,7 @@ when we need to use RotatingFileHandler.
 The output can be redirected to logger module by simply making use of
 LogFile of memory profiler module.
 
-.. code-block:: python
+.. code-block:: python-console
 
     >>> from memory_profiler import LogFile
     >>> import sys
@@ -365,7 +365,7 @@ could be cumbersome and one can choose only entries with increments
 by passing True to reportIncrementFlag, where reportIncrementFlag is
 a parameter to LogFile class of memory profiler module.
 
-.. code-block:: python
+.. code-block:: python-console
 
     >>> from memory_profiler import LogFile
     >>> import sys
@@ -466,7 +466,7 @@ Currently, the backend can be set via the CLI
 
 and is exposed by the API
 
-.. code-block:: python
+.. code-block:: python-console
 
     >>> from memory_profiler import memory_usage
     >>> mem_usage = memory_usage(-1, interval=.2, timeout=1, backend="psutil")
